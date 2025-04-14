@@ -35,8 +35,11 @@ public class PatientService {
         existing.setAddress(patient.getAddress());
         return repository.save(existing);
     }
-    public void deleteById(long id){
-        repository.deleteById(id);
+    public void delete(Long id) {
+        Patient existing = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Appointment not found"));
+        repository.delete(existing);
     }
+
 
 }

@@ -48,7 +48,7 @@ public class PatientController {
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable long id){
         logger.info("Deleting patient with ID: {}", id);
-        service.deleteById(id);
+        service.delete(id);
     }
 
 }
