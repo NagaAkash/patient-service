@@ -50,5 +50,8 @@ public class PatientController {
         logger.info("Deleting patient with ID: {}", id);
         service.delete(id);
     }
-
+    @GetMapping("/by-name/{firstName}")
+    public Patient getPatientByFirstName(@PathVariable("firstName") String firstName) {
+        return service.getPatientByFirstName(firstName);
+    }
 }

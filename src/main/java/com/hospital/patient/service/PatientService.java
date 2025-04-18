@@ -40,6 +40,10 @@ public class PatientService {
                 .orElseThrow(() -> new RuntimeException("Appointment not found"));
         repository.delete(existing);
     }
+    public Patient getPatientByFirstName(String firstName) {
+        return repository.findByFirstName(firstName); // Assumes your repo has this method
+    }
+
 
 
 }
